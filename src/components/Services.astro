@@ -1,0 +1,58 @@
+---
+const services = [
+  {
+    title: 'Venta de equipos',
+    text: 'Montacargas nuevos y certificados, con financiamiento a la medida de tu operación.',
+    icon: 'M4 18h2m12 0h2M6 18V9l6-4 6 4v9M9 18v-5h6v5',
+  },
+  {
+    title: 'Alquiler flexible',
+    text: 'Renta a corto y largo plazo, con flota disponible para picos de demanda.',
+    icon: 'M3 7h13v9H3V7zm13 3h3l2 3v3h-5v-6zM7 19a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z',
+  },
+  {
+    title: 'Mantenimiento preventivo',
+    text: 'Planes programados que reducen fallas y extienden la vida útil del equipo.',
+    icon: 'M12 2l2.5 5 5.5.8-4 4 1 5.5L12 15l-5 2.3 1-5.5-4-4 5.5-.8z',
+  },
+  {
+    title: 'Mantenimiento correctivo',
+    text: 'Diagnóstico y reparación rápida con técnicos especializados en sitio.',
+    icon: 'M14 2l-9 9 2 2 9-9zM3 21l5-1 9-9-4-4-9 9z',
+  },
+  {
+    title: 'Repuestos originales',
+    text: 'Inventario permanente de piezas certificadas para todas las marcas principales.',
+    icon: 'M12 2L4 6v6l8 4 8-4V6zM4 12v6l8 4 8-4v-6',
+  },
+  {
+    title: 'Inspecciones técnicas',
+    text: 'Revisiones normativas que garantizan seguridad operativa y cumplimiento legal.',
+    icon: 'M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+];
+---
+
+<section id="servicios" class="py-24 bg-white">
+  <div class="mx-auto max-w-content px-6 lg:px-10">
+    <div data-animate="up" class="max-w-xl mb-14">
+      <p class="section-eyebrow mb-3">Lo que hacemos</p>
+      <h2 class="text-3xl lg:text-4xl text-ink">Soluciones integrales para cada etapa del equipo</h2>
+      <div class="fork-divider mt-5"><span></span><span></span></div>
+    </div>
+
+    <div data-animate="up" data-animate-stagger="0.1" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((s) => (
+        <div data-card class="card">
+          <div data-card-icon class="w-12 h-12 rounded-sm bg-blue/10 flex items-center justify-center mb-5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1652A6" stroke-width="1.8" class="w-6 h-6">
+              <path d={s.icon} stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold font-display text-ink mb-2">{s.title}</h3>
+          <p class="text-sm text-steel leading-relaxed">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

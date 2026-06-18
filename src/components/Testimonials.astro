@@ -1,0 +1,65 @@
+---
+const testimonials = [
+  {
+    name: 'Marcela Rojas',
+    company: 'Logística del Norte S.A.S.',
+    text: 'Redujimos el tiempo de parada de nuestra flota a casi cero gracias al mantenimiento preventivo programado.',
+    initials: 'MR',
+  },
+  {
+    name: 'Andrés Pabón',
+    company: 'Distribuidora Andina',
+    text: 'El alquiler flexible nos permitió cubrir la temporada alta sin comprometer capital de la empresa.',
+    initials: 'AP',
+  },
+  {
+    name: 'Laura Cifuentes',
+    company: 'Almacenes del Centro',
+    text: 'El soporte técnico llegó en menos de tres horas un domingo. Esa respuesta es la que nos mantiene como clientes.',
+    initials: 'LC',
+  },
+];
+---
+
+<section id="testimonios" class="py-24 bg-white">
+  <div class="mx-auto max-w-content px-6 lg:px-10">
+    <div data-animate="up" class="max-w-xl mb-14">
+      <p class="section-eyebrow mb-3">Clientes</p>
+      <h2 class="text-3xl lg:text-4xl text-ink">Lo que dicen quienes ya operan con nosotros</h2>
+      <div class="fork-divider mt-5"><span></span><span></span></div>
+    </div>
+
+    <div data-testimonials data-animate="up" class="relative max-w-2xl">
+      <div class="relative min-h-[220px]">
+        {testimonials.map((t) => (
+          <div data-testimonial-slide class="bg-mist rounded-md p-9">
+            <p class="text-lg text-ink leading-relaxed mb-7">&ldquo;{t.text}&rdquo;</p>
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-full bg-blue text-white font-mono text-sm flex items-center justify-center">
+                {t.initials}
+              </div>
+              <div>
+                <p class="font-semibold text-ink">{t.name}</p>
+                <p class="text-sm text-steel">{t.company}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex items-center gap-5 mt-7">
+        <button data-testimonial-prev aria-label="Testimonio anterior" class="w-10 h-10 rounded-full border border-mist flex items-center justify-center hover:border-blue transition-colors">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="#14181C" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <div class="flex gap-2">
+          {testimonials.map((_, i) => (
+            <button data-testimonial-dot aria-label={`Ir al testimonio ${i + 1}`} class={`w-2.5 h-2.5 rounded-full bg-blue transition-opacity ${i === 0 ? 'opacity-100' : 'opacity-30'}`}></button>
+          ))}
+        </div>
+        <button data-testimonial-next aria-label="Siguiente testimonio" class="w-10 h-10 rounded-full border border-mist flex items-center justify-center hover:border-blue transition-colors">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="#14181C" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

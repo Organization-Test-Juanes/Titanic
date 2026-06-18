@@ -1,0 +1,53 @@
+---
+const links = [
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#catalogo', label: 'Catálogo' },
+  { href: '#proceso', label: 'Proceso' },
+  { href: '#testimonios', label: 'Testimonios' },
+];
+---
+
+<header data-navbar class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
+  <div class="mx-auto max-w-content px-6 lg:px-10">
+    <div class="flex h-20 items-center justify-between">
+      <a href="#inicio" class="font-display text-2xl font-semibold tracking-tightish text-ink">
+        MONTACARGAS <span class="text-blue">TITANIC</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9" aria-label="Navegación principal">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="font-body text-sm font-medium text-ink/80 hover:text-blue transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+        <a href="#cotizar" data-btn class="btn-primary">Solicitar cotización</a>
+      </nav>
+
+      <button
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menú de navegación"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+      >
+        <span class="block h-0.5 w-6 bg-ink"></span>
+        <span class="block h-0.5 w-6 bg-ink"></span>
+        <span class="block h-0.5 w-6 bg-ink"></span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" data-menu-panel class="lg:hidden">
+      <nav class="flex flex-col gap-4 pb-6" aria-label="Navegación móvil">
+        {links.map((link) => (
+          <a href={link.href} class="font-body text-base font-medium text-ink">
+            {link.label}
+          </a>
+        ))}
+        <a href="#cotizar" class="btn-primary justify-center">Solicitar cotización</a>
+      </nav>
+    </div>
+  </div>
+</header>

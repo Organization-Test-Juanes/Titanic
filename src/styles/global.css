@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-offwhite text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold tracking-tightish;
+  }
+  /* Foco visible para navegación por teclado (WCAG AA) */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid #1652A6;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Elemento de firma: "horquilla" — dos barras que evocan las puntas
+     de un montacargas, usadas como subrayado de títulos de sección. */
+  .fork-divider {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 56px;
+  }
+  .fork-divider span {
+    display: block;
+    height: 4px;
+    border-radius: 1px;
+    background: #FFC600;
+  }
+  .fork-divider span:first-child {
+    width: 100%;
+  }
+  .fork-divider span:last-child {
+    width: 68%;
+    background: #1652A6;
+  }
+
+  /* Franja de peligro industrial, usada con moderación */
+  .hazard-stripe {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #FFC600 0,
+      #FFC600 14px,
+      #14181C 14px,
+      #14181C 28px
+    );
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs uppercase tracking-wideish text-blue;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3.5
+           font-body font-semibold text-sm tracking-tightish transition-colors
+           will-change-transform;
+  }
+  .btn-primary {
+    @apply btn bg-yellow text-ink hover:bg-yellow-deep;
+  }
+  .btn-secondary {
+    @apply btn bg-transparent text-white border-2 border-white/70 hover:border-white;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-black;
+  }
+
+  .card {
+    @apply bg-white rounded-md p-7 shadow-card border border-mist will-change-transform;
+  }
+}

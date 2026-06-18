@@ -1,0 +1,81 @@
+---
+const title = 'Movilidad industrial en la que tu operación puede confiar';
+const words = title.split(' ');
+---
+
+<section id="inicio" data-hero class="relative overflow-hidden bg-offwhite pt-32 pb-20 lg:pt-44 lg:pb-28">
+  <div class="mx-auto max-w-content px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="section-eyebrow mb-4">Venta · Alquiler · Mantenimiento</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] text-ink">
+        {words.map((word) => (
+          <span class="inline-block overflow-hidden">
+            <span class="hero-word inline-block">{word}&nbsp;</span>
+          </span>
+        ))}
+      </h1>
+
+      <p data-hero-subtitle class="mt-6 max-w-md text-lg text-steel font-body">
+        Equipos certificados, soporte técnico nacional y respuesta inmediata para que tu cadena de
+        suministro nunca se detenga.
+      </p>
+
+      <div data-hero-buttons class="mt-9 flex flex-wrap gap-4">
+        <a href="#cotizar" data-btn class="btn-primary">Solicitar cotización</a>
+        <a
+          href="https://wa.me/573000000000"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-btn
+          class="btn-dark"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+
+      <dl data-hero-trust class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl">
+        {[
+          ['+15', 'años de experiencia'],
+          ['24/7', 'soporte técnico'],
+          ['32', 'ciudades con cobertura'],
+          ['<24h', 'tiempo de respuesta'],
+        ].map(([value, label]) => (
+          <div>
+            <dt class="font-display text-2xl text-blue">{value}</dt>
+            <dd class="font-mono text-xs uppercase tracking-wideish text-steel mt-1">{label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
+    <div class="relative">
+      <div data-hero-image class="relative">
+        <svg viewBox="0 0 560 420" class="w-full h-auto" role="img" aria-label="Ilustración de un montacargas industrial moderno">
+          <rect x="0" y="320" width="560" height="6" fill="#E4E7EB" />
+          <rect x="330" y="60" width="14" height="280" fill="#4A5568" />
+          <rect x="362" y="60" width="14" height="280" fill="#4A5568" />
+          <rect x="318" y="150" width="58" height="16" fill="#1652A6" />
+          <rect x="150" y="270" width="190" height="10" fill="#FFC600" />
+          <rect x="150" y="290" width="190" height="10" fill="#FFC600" />
+          <rect x="160" y="195" width="100" height="75" fill="#E4E7EB" stroke="#4A5568" stroke-width="2" />
+          <path d="M340 340 L340 230 Q340 210 360 210 L470 210 Q490 210 490 230 L490 300 L460 340 Z" fill="#1652A6" />
+          <rect x="350" y="225" width="120" height="55" rx="4" fill="#0D3B7A" />
+          <rect x="358" y="233" width="48" height="32" rx="2" fill="#E4E7EB" opacity="0.85" />
+          <rect x="362" y="170" width="98" height="10" fill="#14181C" />
+          <rect x="368" y="178" width="6" height="34" fill="#14181C" />
+          <rect x="448" y="178" width="6" height="34" fill="#14181C" />
+          <circle cx="380" cy="345" r="32" fill="#14181C" />
+          <circle cx="380" cy="345" r="13" fill="#E4E7EB" />
+          <circle cx="465" cy="345" r="32" fill="#14181C" />
+          <circle cx="465" cy="345" r="13" fill="#E4E7EB" />
+          <circle cx="195" cy="345" r="20" fill="#14181C" />
+          <circle cx="195" cy="345" r="8" fill="#E4E7EB" />
+        </svg>
+      </div>
+      <div class="fork-divider mt-2 ml-2">
+        <span></span><span></span>
+      </div>
+      <p class="font-mono text-xs text-steel mt-2 ml-2">Ilustración de referencia — sustituir por fotografía real del equipo.</p>
+    </div>
+  </div>
+</section>

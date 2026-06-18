@@ -1,0 +1,36 @@
+---
+const steps = [
+  { n: '01', title: 'Contacto', text: 'Nos cuentas qué necesitas: venta, alquiler o mantenimiento.' },
+  { n: '02', title: 'Asesoría', text: 'Un especialista evalúa tu operación y recomienda el equipo ideal.' },
+  { n: '03', title: 'Entrega', text: 'Coordinamos transporte e instalación dentro del plazo acordado.' },
+  { n: '04', title: 'Soporte', text: 'Acompañamiento técnico continuo durante toda la vida del equipo.' },
+];
+---
+
+<section id="proceso" data-process class="py-24 bg-offwhite">
+  <div class="mx-auto max-w-content px-6 lg:px-10">
+    <div data-animate="up" class="max-w-xl mb-16">
+      <p class="section-eyebrow mb-3">Cómo trabajamos</p>
+      <h2 class="text-3xl lg:text-4xl text-ink">Un proceso simple, de principio a fin</h2>
+      <div class="fork-divider mt-5"><span></span><span></span></div>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-mist">
+        <div data-process-line class="h-full bg-blue"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-4 gap-10">
+        {steps.map((s) => (
+          <div data-process-step class="relative">
+            <div class="w-12 h-12 rounded-full bg-ink text-yellow font-mono flex items-center justify-center mb-5 relative z-10">
+              {s.n}
+            </div>
+            <h3 class="text-lg font-semibold font-display text-ink mb-2">{s.title}</h3>
+            <p class="text-sm text-steel leading-relaxed">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

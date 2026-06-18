@@ -1,0 +1,72 @@
+---
+const products = [
+  {
+    name: 'Contrabalanceado Diésel TL-25',
+    capacity: '2.5 t',
+    height: '4.5 m',
+    fuel: 'Diésel',
+  },
+  {
+    name: 'Eléctrico de Almacén TL-16E',
+    capacity: '1.6 t',
+    height: '5.2 m',
+    fuel: 'Eléctrico',
+  },
+  {
+    name: 'Retráctil Industrial TL-30R',
+    capacity: '3.0 t',
+    height: '7.8 m',
+    fuel: 'Diésel / GLP',
+  },
+];
+---
+
+<section id="catalogo" class="py-24 bg-white">
+  <div class="mx-auto max-w-content px-6 lg:px-10">
+    <div data-animate="up" class="max-w-xl mb-14">
+      <p class="section-eyebrow mb-3">Catálogo</p>
+      <h2 class="text-3xl lg:text-4xl text-ink">Modelos disponibles para venta y alquiler</h2>
+      <div class="fork-divider mt-5"><span></span><span></span></div>
+    </div>
+
+    <div data-animate="up" data-animate-stagger="0.1" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map((p) => (
+        <div data-card class="card flex flex-col">
+          <div data-card-icon class="bg-mist rounded-sm mb-6 flex items-center justify-center h-40">
+            <svg viewBox="0 0 160 110" class="w-28">
+              <rect x="92" y="14" width="6" height="70" fill="#4A5568" />
+              <rect x="106" y="14" width="6" height="70" fill="#4A5568" />
+              <rect x="40" y="70" width="56" height="6" fill="#FFC600" />
+              <rect x="40" y="80" width="56" height="6" fill="#FFC600" />
+              <path d="M98 90 L98 50 Q98 42 106 42 L132 42 Q140 42 140 50 L140 78 L128 90 Z" fill="#1652A6" />
+              <circle cx="112" cy="92" r="9" fill="#14181C" />
+              <circle cx="130" cy="92" r="9" fill="#14181C" />
+              <circle cx="58" cy="92" r="6" fill="#14181C" />
+            </svg>
+          </div>
+
+          <h3 class="text-lg font-semibold font-display text-ink mb-4">{p.name}</h3>
+
+          <dl class="font-mono text-xs text-steel grid grid-cols-3 gap-2 mb-6 border-t border-mist pt-4">
+            <div>
+              <dt class="uppercase tracking-wideish">Capacidad</dt>
+              <dd class="text-ink mt-1">{p.capacity}</dd>
+            </div>
+            <div>
+              <dt class="uppercase tracking-wideish">Altura</dt>
+              <dd class="text-ink mt-1">{p.height}</dd>
+            </div>
+            <div>
+              <dt class="uppercase tracking-wideish">Combustible</dt>
+              <dd class="text-ink mt-1">{p.fuel}</dd>
+            </div>
+          </dl>
+
+          <a href="#cotizar" data-btn class="btn-secondary !border-blue !text-blue hover:!bg-blue hover:!text-white mt-auto justify-center">
+            Ver disponibilidad
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

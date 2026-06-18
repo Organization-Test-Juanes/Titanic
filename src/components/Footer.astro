@@ -1,0 +1,61 @@
+---
+const hours = [
+  ['Lunes a viernes', '7:00 a.m. – 6:00 p.m.'],
+  ['Sábados', '8:00 a.m. – 1:00 p.m.'],
+  ['Soporte de emergencia', '24/7'],
+];
+---
+
+<footer data-animate="up" class="bg-ink text-white pt-16 pb-8">
+  <div class="mx-auto max-w-content px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-display text-2xl font-semibold mb-4">
+        Montacargas <span class="text-yellow">Titanic</span>
+      </p>
+      <p class="text-sm text-white/60 leading-relaxed">
+        Venta, alquiler y mantenimiento de montacargas con cobertura nacional y soporte técnico
+        especializado.
+      </p>
+    </div>
+
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wideish text-yellow mb-4">Contacto</p>
+      <ul class="space-y-2 text-sm text-white/80">
+        <li>+57 300 000 0000</li>
+        <li>ventas@torquelift.com</li>
+        <li>Calle 80 # 45-12, Bogotá, Colombia</li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wideish text-yellow mb-4">Horarios</p>
+      <ul class="space-y-2 text-sm text-white/80">
+        {hours.map(([label, value]) => (
+          <li class="flex justify-between gap-4">
+            <span>{label}</span>
+            <span class="text-white/50">{value}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="font-mono text-xs uppercase tracking-wideish text-yellow mb-4">Síguenos</p>
+      <div class="flex gap-3">
+        {['LinkedIn', 'Facebook', 'Instagram'].map((label) => (
+          <a
+            href="#"
+            aria-label={label}
+            class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-xs hover:bg-white/20 transition-colors"
+          >
+            {label.slice(0, 2)}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-content px-6 lg:px-10 mt-12 pt-6 border-t border-white/10 text-xs text-white/40">
+    © {new Date().getFullYear()} TorqueLift. Todos los derechos reservados.
+  </div>
+</footer>
